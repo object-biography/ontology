@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="owl2html.xslt"?>
+
+<rdf:RDF xmlns="http://purl.org/object-biography/#"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:dct="http://purl.org/dc/terms/"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+    <owl:Ontology rdf:about="http://purl.org/object-biography/#">
+        <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-12-18T17:36:35+09:00</dct:modified>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sakiko Kawabe</dc:creator>
+        <dc:contributor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Akihiro Kameda</dc:contributor>
+        <dct:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-12-18T17:36:35+09:00</dct:issued>
+        <dct:title xml:lang="en">Object Biography Ontology</dct:title>
+    </owl:Ontology>
+    
+    <owl:ObjectProperty rdf:about="http://purl.org/object-biography/#hasEvent">
+        <rdfs:label xml:lang="en">hasEvent</rdfs:label>
+        <rdfs:comment xml:lang="en">The object has life event.</rdfs:comment>
+    </owl:ObjectProperty>
+</rdf:RDF>
