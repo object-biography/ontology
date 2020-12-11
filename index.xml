@@ -7,18 +7,61 @@
      xmlns:dct="http://purl.org/dc/terms/"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:prov="http://www.w3.org/ns/prov#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
 
     <owl:Ontology rdf:about="http://purl.org/object-biography/#">
-        <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-12-18T17:36:35+09:00</dct:modified>
+        <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-12-11T20:14:11+09:00</dct:modified>
         <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sakiko Kawabe</dc:creator>
-        <dc:contributor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Akihiro Kameda</dc:contributor>
-        <dct:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-12-18T17:36:35+09:00</dct:issued>
+        <dc:contributor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Akihiro Kameda, Makoto Goto</dc:contributor>
+        <dct:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-12-08T17:36:35+09:00</dct:issued>
         <dct:title xml:lang="en">Object Biography Ontology</dct:title>
     </owl:Ontology>
     
-    <owl:ObjectProperty rdf:about="http://purl.org/object-biography/#hasEvent">
-        <rdfs:label xml:lang="en">hasEvent</rdfs:label>
-        <rdfs:comment xml:lang="en">The object has life event.</rdfs:comment>
+    <owl:ObjectProperty rdf:about="http://purl.org/object-biography/#hadEvent">
+        <rdfs:label xml:lang="en">hadEvent</rdfs:label>
+        <rdfs:comment xml:lang="en">The object had life event.</rdfs:comment>
     </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="http://purl.org/object-biography/#hadIndirectEvent">
+        <rdfs:label xml:lang="en">hadIndirectEvent</rdfs:label>
+        <rdfs:comment xml:lang="en">Certain object closely related to the target object had life event. e.g. Digitized version of the object was lost.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:Class rdf:ID="http://purl.org/object-biography/#Event">
+        <rdfs:label xml:lang="en">Event</rdfs:label>
+        <rdfs:comment xml:lang="en">Event.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:ID="http://purl.org/object-biography/#Activity">
+        <rdfs:label xml:lang="en">Activity</rdfs:label>
+        <rdfs:comment xml:lang="en">Activity.</rdfs:comment>
+        <rdfs:subClassOf rdf:about="Event"/>
+    </owl:Class>
+
+    <owl:Class rdf:ID="http://purl.org/object-biography/#Use">
+        <rdfs:label xml:lang="en">Use</rdfs:label>
+        <rdfs:comment xml:lang="en">Activity of using the object.</rdfs:comment>
+        <rdfs:subClassOf rdf:about="Activity"/>
+        <rdfs:subClassOf rdf:about="prov:Activity"/>
+    </owl:Class>
+
+    <owl:Class rdf:ID="http://purl.org/object-biography/#Keeping">
+        <rdfs:label xml:lang="en">Keeping</rdfs:label>
+        <rdfs:comment xml:lang="en">Activity of keeping the object.</rdfs:comment>
+        <rdfs:subClassOf rdf:about="Activity"/>
+    </owl:Class>
+
+    <owl:Class rdf:ID="http://purl.org/object-biography/#Project">
+        <rdfs:label xml:lang="en">Project</rdfs:label>
+        <rdfs:comment xml:lang="en">Project related to the object.</rdfs:comment>
+        <rdfs:subClassOf rdf:about="Activity"/>
+    </owl:Class>
+
+    <owl:Class rdf:ID="http://purl.org/object-biography/#Object">
+        <rdfs:label xml:lang="en">Object</rdfs:label>
+        <rdfs:comment xml:lang="en">Object which you write bibliography of.</rdfs:comment>
+        <rdfs:subClassOf rdf:about="prov:Entity"/>
+    </owl:Class>
+
 </rdf:RDF>

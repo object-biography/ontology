@@ -9,6 +9,9 @@
 
 <xsl:template match="/">
   <html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
   <body>
   <h1><xsl:value-of select="rdf:RDF/owl:Ontology/dct:title"/></h1>
   <h2>OWL ontology</h2>
@@ -43,6 +46,21 @@
 
    <p>This HTML is meant to show a simple browser introduction to the ontology and has been automatically created using XSLT. To see the source OWL as RDF/XML, either use "Save As" or "View Source".
    </p>
+
+  <h3>Overview</h3>
+  <p><img src="overview.png" /></p>
+
+  <h3>Defined Classes</h3>
+  <dl>
+    <xsl:for-each select="//owl:Class">
+      <dt>
+            <em><xsl:value-of select="rdfs:label" /></em>
+            &#xa0;
+            <code><xsl:value-of select="@rdf:ID" /></code>
+      </dt>
+      <dd><small><xsl:value-of select="rdfs:comment" /></small></dd>
+    </xsl:for-each>
+  </dl>
 
   <h3>Defined object properties</h3>
   <dl>
